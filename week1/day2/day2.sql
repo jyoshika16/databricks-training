@@ -42,3 +42,18 @@ SELECT department_id, AVG(salary) FROM Employee GROUP BY department_id ORDER BY 
 
 -- Q60 Select employees whose salary is greater than all employees in Finance department
 SELECT * FROM Employee WHERE salary > ALL (SELECT salary FROM Employee WHERE department_id = 3);
+
+-- Q61 Select names and salaries of employees whose salary is above average salary of their department
+SELECT name, salary FROM Employee e WHERE salary > (SELECT AVG(salary) FROM Employee WHERE department_id = e.department_id);
+
+-- Q62 Select names of employees who were hired on the same date as the oldest employee
+SELECT name FROM Employee WHERE hire_date = (SELECT MIN(hire_date) FROM Employee);
+
+-- Q63 Select department names with total number of projects
+SELECT Department.name, COUNT(Project.project_id) FROM Department LEFT JOIN Project ON Department.department_id = Project.department_id GROUP BY Department.name ORDER BY COUNT(Project.project_id) DESC;
+
+-- Q64 Select employee name with highest salary in each department
+SELECT name, department_id, salary FROM Employee e WHERE salary = (SELECT MAX(salary) FROM Employee WHERE department_id = e.department_id);
+
+-- Q65 Select names and salaries of employees older than average age in their department
+SELECT name, salary FROM Employee e WHERE age > (SELECT AVG(age) FROM Employee WHERE department_id = e.department_id);
