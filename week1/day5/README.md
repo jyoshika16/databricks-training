@@ -1,17 +1,12 @@
 # Date Functions Practice
 
-Practiced different MySQL date and timestamp functions.
+In this practice session, I learned how date and time functions are used in SQL for real-time business scenarios like order tracking, delivery analysis and report generation.
 
-Covered:
-- CURDATE
-- NOW
-- YEAR
-- MONTH
-- DAY
-- MONTHNAME
-- DAYNAME
-- DATEDIFF
-- DATE_FORMAT
-- TIMESTAMPDIFF
+I practiced:
+- CURDATE and NOW to get current system date and time
+- YEAR, MONTH and DAY to extract specific parts from dates
+- MONTHNAME and DAYNAME to identify readable month and weekday names
+- DATEDIFF and TIMESTAMPDIFF to calculate date differences
+- DATE_FORMAT to display dates in different formats
 
-Solved practice queries related to orders, delivery dates and real-time date calculations.
+Solved multiple queries using order and delivery data to improve understanding of date calculations and filtering in SQL.
